@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Stroke Analysis</title>
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/ai_camp_logo.ico')}}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" /> 
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style = "background-color:rgba(173, 216, 230, 1);">
+            <div class="container px-4 px-lg-5">
+                <a style = "color:black;" class="navbar-brand" href="#page-top">Stroke Analysis</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i> 
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a style = "color:black;" class="nav-link" href="#about">Introduction</a></li>
+                        <li class="nav-item"><a style = "color:black;" class="nav-link" href="#data-cleaning">Data Cleaning</a></li>                      
+                        <li class="nav-item"><a style = "color:black;" class="nav-link" href="#eda">Exploratory Data Analysis</a></li>
+                        <li class="nav-item"><a style = "color:black;" class="nav-link" href="#machine-learning">Machine Learning</a></li>
+                        <li class="nav-item"><a style = "color:black;" class="nav-link" href="#conclusion">Conclusion</a></li>
+                        <li class="nav-item"><a style = "color:black;" class="nav-link" href="#our-team">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center"> 
+                        <h1 class="mx-auto my-0 text-uppercase">Stroke Analysis
+                      </h1>
+                        <h2 class="text-black mx-auto mt-2 mb-5">A project by the Random Searchers.</h2>
+                        <a class="btn btn-primary" href="#about">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about" style="background-color:rgba(173, 216, 230, 0.5);">
+          <h1 style="color:black;">
+            Introduction
+          </h1>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <p style = "color:black;">   
+                          A stroke is a medical emergency where blood flow to the brain is dangerously restricted resulting in brain cell death. According to a 2018 study in the New England Journal of Medicine, one in four people over the age of 25 will have a stroke in their lifetime. If not treated properly, aftereffects may include restricted motion, paralysis, and difficulty communicating. The purpose of this project is to raise awareness of strokes and the risk factors of strokes. This project uses a dataset from <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset">Kaggle</a> which contains features that may be used to predict strokes. Some features analyzed in the dataset related to strokes are BMI, average glucose level, gender, being married, and age.
+                      </p>
+                  </div>
+              </div>
+            </div>
+        </section> 
+        <!-- Data Cleaning -->
+        <section class="projects-section bg-light" id="data-cleaning">
+
+            <div class="container px-4 px-lg-5">
+          <h1 class="mb-4">
+              Data Cleaning
+          </h1>
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+
+                            <h4>Why clean data?</h4>
+                            <p class="text-black-50 mb-0">The most important factor in data science is data. No matter what sophisticated machine learning models are used, the models are only as good as the data. Given a dataset, there are usually false data points and missing data that could compromise the accuracy of our modeling. Cleaning data helps identify and remove errors in the data.
+                              <br><br></p>
+
+                  
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6" ><img class="img-fluid" src="{{url_for('static', filename='assets/img/puzzle.jpg')}}" style="height:100%; width:100%" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Missing Value Handling</h4>
+                                    <p class="mb-0 text-white-50"> In our dataset, "BMI" was the only feature with missing data. We imputed this column by filling the missing values with the mean of "BMI".</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6" >
+                      <img class="img-fluid" src="{{url_for('static', filename='assets/img/ml_1.png')}}" style="height:100%; width:100%;"  alt="..." /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Outlier Handling</h4>
+                                    <p class="mb-0 text-white-50">
+                                  All of the numerical data in our dataset had some outliers. However, we left them in because they were valid measurements, not impossible ones.
+                                  </p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+                <!-- Project Three Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="{{url_for('static', filename='assets/img/imbalanced.jpg')}}" style="height:100%; width:100%" alt="..."/></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Imbalanced Data Handling</h4>
+                                    <p class="mb-0 text-white-50">
+                                      Imbalanced data occurs when one of the target classes make up a small proportion of the data. Out data is imbalanced, so we used SMOTE to balance our data. SMOTE balances data by synthesizing data with minority targets.
+                                  </p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                  
+                  
+            </div>
+            </div>  
+        </section>
+        <!-- EDA -->
+        <section class="projects-section bg-light" id="eda">
+         
+            <div class="container px-4 px-lg-5">
+                <h1>
+                  Exploratory Data Analysis
+                </h1>
+                <!-- Featured Project Row-->
+                <div class= "row gx-0 mb-4 mb-lg-5 align-items-center">
+                    
+                      <center><iframe width="555" height="330" src="{{url_for('static', filename='common/stroke_bar.html')}}" alt="centered image"></iframe></center>
+                      <p>The chart above shows the target column "stroke", with '0' representing no strokes and '1' representing strokes. As shown by the chart, the data is imbalanced with about 5% of the data consisting of samples with a stroke.</p>
+                      <center><iframe width="850" height="445" src="{{url_for('static', filename='common/strokes_married.html')}}" alt="centered image"></iframe></center>
+                      <p>The pie charts above compare the proportion of strokes in people who have been married and people who have never been married. There is a greater proportion of individuals with strokes for people that have been married.</p>
+                      <center><iframe width="855" height="435" src="{{url_for('static', filename='common/strokes_gender.html')}}" alt="centered image"></iframe></center>
+                      <p>The pie charts above compare the proportion of strokes based on being male or female. Most studies have found that females are more likely to have a stroke. However, this dataset sampled a population of people with a slightly greater proportion of males that had a stroke.</p>
+                      <center><iframe width="555" height="425" src="{{url_for('static', filename='common/stroke_age_proportion.html')}}" alt="centered image"></iframe></center>
+                      <p>The chart above demonstrates the relation between stroke and age. The increasing line shows a positive correlation between age and stroke likelihood.</p>
+                      <center><iframe width="555" height="450" src="{{url_for('static', filename='common/glucose_age_stroke.html')}}" alt="centered image"></iframe></center>
+                      <p>This chart shows the relationship of average glucose levels and age with strokes. The blue dots represent an individual who had a stroke. The region with the highest proportion of strokes occur at high average glucose levels and old age. </p>
+                      <center><iframe width="750" height="630" src="{{url_for('static', filename='common/heatmap.html')}}" alt="centered image"></iframe></center>
+                      <p>The figure above is a correlation heatmap of a subset of the features used in our dataset. The subset of features shown include only features that have an absolute correlation of at least 0.08 with the "stroke" column. This figure is useful in feature selection for machine learning, and useful for observing direct correlations between input features and the "stroke" column.</p>
+                    
+                </div>
+            </div>
+        </section>      
+        <!-- Machine Learning -->
+        <section class="projects-section bg-light" id="machine-learning">
+      
+            <div class="container px-4 px-lg-5">
+                <h1 class="mb-4">Machine Learning</h1>
+                <p>Machine learning (ML) is a field of study that uses mathematical algorithms and data to make predictions and enhance the performance of tasks. Machine learning is considered to be a component of Artificial Intelligence (AI). Machine learning models "learn" by using data to tune hyperparameters in the machine learning model. Machine learning is utilized in a wide range of applications including speech recognition, email filtering, computer vision, and medicine. For our dataset, the target column "strokes" only has two class, having a stroke and not having a stroke. Therefore, we explored machine learning algorithms for binary classification.</p>
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <h2 class="mb-4">Logistic Regression</h2>
+                 <center><img width='480' height='300' src="{{url_for('static', filename='assets/img/log_regression.png')}}" alt="centered image"></center>
+                <p>Logistic regression was the first binary classifier we used in our project. Logistic regression produces a probability (whether something will or will not happen) which is compared to a threshold; if the probability is above the threshold, it is considered a positive case. For our dataset, logistic regression had a low accuracy of 54%. However, the recall rate was high (98%). Recall is the number of true positives divided by the sum of true positives and false negatives.</p>
+                  <center><iframe width="555" height="450" src="{{url_for('static', filename='common/cf_matrix_lr.html')}}" alt="centered image"></iframe></center>
+                <h2 class="mb-4">Decison Tree Classifier</h2>
+                  <center><img width="500"height="300"src="{{url_for('static', filename='assets/img/DTC-img')}}"alt="centered image"> </center>
+                <p>
+                  The Decision Tree Classifier was created around the 1960s, however a similar concept has been used since the earliest written records. A decision tree classifier is a supervised machine learning algorithm that uses a tree like structure to categorize outcomes based on the answers to a previous set of questions. In terms of accuracy, the Decision Tree Classifier performed better than the logistic regression with an accuracy of 80%. However, the recall rate was low (49%).
+                  </p>
+                  <center><iframe width="555" height="450" src="{{url_for('static', filename='common/cf_matrix_dtc.html')}}" title="Decision Tree Classifier"alt="centered image"></iframe></center>
+      
+                <h2 class="mb-4">
+                  Multi-Layer Perceptron
+                </h2> 
+                <center><img width='500' height = '320' src="{{url_for('static', filename='assets/img/MLP-img')}}"alt="centered image"> </center>
+                <p>
+                  Multi-Layer Perceptrons, or neural networks, are another machine learning algorithm that use connections, activation functions, and layers to predict an output. Multi-layer perceptrons can function as a nonlinear function approximator for either classification or regression. The study of neural networks is a subset of machine learning called deep learning. Deep learning can make predictions on advanced tasks like self-driving cars and conversational virtual robots like Siri. Regarding predictions on our stroke dataset, the multi-layer perceptron model had the highest accuracy (88%), but the lowest recall (28%).
+                  </p>
+                 <center> <iframe width="555"height="450" src="{{url_for('static', filename='common/cf_matrix_mlp.html')}}" title="Multi-Layer Preceptron">
+                   </iframe></center> 
+                
+                </div>  
+              </div>
+      </section>
+      
+      
+        <section class="projects-section bg-light" id="eda">
+         
+            <div class="container px-4 px-lg-5">      
+        <h2>
+                        Machine Learning Results
+                      </h2>
+                      <p>
+The applicability of our models depend on the use case for stroke diagnoses. If one wants to use a model with very high accuracy, a null predictor (predicting everyone to not have a stroke) will be correct 96% of the time. However, if one wants to capture the population at higher risk for a stroke, the logistic regression model performed best with a 0.98 recall in the 'has had a stroke' category.
+                        
+                      </p>
+          </div>
+      </section>
+        <!-- Conclusion-->
+        <section class="signup-section" id="conclusion"> 
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto paragraph-textbox">
+                    
+                        <h1 class="mb-5">Conclusion</h1> 
+                        <p class="mb-5 "> 
+                        From exploratory data analysis, we observed that the most impactful stroke factors were age, average glucose level, and marriage status. The percentage of individuals that have a stroke increases after the age of 40. Additionally, individuals with higher average glucose levels and married individuals both have an increased risk of having a stroke.<br><br>
+Regarding model predictions, it was difficult to improve the accuracy past the null accuracy for this dataset. It was relatively small (5000 samples) with a highly imbalanced target distribution (about 5% minority class). Since models perform only as well as the quality of the data, the main improvement for future experiments in stroke prevention would be to increase  quantity and diversity of data.<br>
+
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Team-->
+        <section class="contact-section bg-black" id="our-team">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <center><h1 style="color:white;">
+                      Meet Our Amazing Team!
+                  </h1></center>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                              <img src= "{{url_for('static', filename='assets/img/IMG-0119.jpg')}}" 
+                                   width=100
+                                   length=200>
+                                <h4 class="text-uppercase m-0"><br>Lola Owens</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><p>Student</p></div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                              <img src= "{{url_for('static', filename='assets/img/tw.jpg')}}"
+                                   width = 100
+                                   length = 200>
+                                <h4 class="text-uppercase m-0"><br>Tess Whitten</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><p>Student</p></div>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                              <img src="{{url_for('static', filename='assets/img/unnamed.jpeg')}}"
+                                   width=100
+                                   length=200>
+                              <h4 class="text-uppercase m-0"><br>Abigail Jacoby</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><p>Student</p></div>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                              <img src="{{url_for('static', filename='assets/img/Alfred-pic.png')}}"
+                                   width=100
+                                   length=200>
+                                <h4 class="text-uppercase m-0"><br>Alfredo Villanueva-Meza</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><p>Student</p></div>
+                            </div>
+                        </div> 
+                    </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                              <img src = "{{url_for('static', filename='assets/img/Abeera-pic')}}"
+                                   width= 100
+                                   length = 200>
+                                <h4 class="text-uppercase m-0"><br>Abeera Farid</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><p>Student</p></div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                  <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                              <img src = "{{url_for('static', filename='assets/img/ej.png')}}"
+                                   width= 100
+                                   length = 200>
+                                <h4 class="text-uppercase m-0"><br>Eric Juarez</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><p>Instructor</p></div>
+                            </div>
+                        </div> 
+                   </div>  
+
+                      </div>
+                    </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://twitter.com/aicampofficial"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/aicampdotorg/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://github.com/organization-x"><i class="fab fa-github"></i></a>
+                </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; AI Camp 2022</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                       
+<hr size='1'/>
+        * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
